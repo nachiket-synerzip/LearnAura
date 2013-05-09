@@ -1,8 +1,15 @@
 body {
-  padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  padding: 10px 20px;
 }
 
 a {
   color: #00B7FF;
+}
+
+.map {
+	height: 500px;
+	width: 800px;
+	border: 1px black solid;
+	margin: 0px auto;
 }
