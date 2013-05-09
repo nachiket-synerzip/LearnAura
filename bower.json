@@ -1,0 +1,13 @@
+{
+    "name": "Learn Aura",
+    "version": "0.1.0",
+    "main": "",
+    "dependencies": {
+        "jquery": "~1.9.1",
+        "requirejs": "latest",
+        "aura" : "latest",
+        "jquery-ui": "latest",
+        "backbone": "latest",
+        "openlayers": "git://github.com/openlayers/openlayers.git"
+    }
+}
