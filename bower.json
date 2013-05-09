@@ -8,6 +8,6 @@
         "aura" : "latest",
         "jquery-ui": "latest",
         "backbone": "latest",
-        "openlayers": "git://github.com/openlayers/openlayers.git"
+        "openlayers": "./vendor/openlayers"
     }
 }

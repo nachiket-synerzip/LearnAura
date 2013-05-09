@@ -1,7 +1,7 @@
 define({
 	require: {
 		paths: {
-			openlayers: 'components/openlayers/lib/OpenLayers'
+			openlayers: 'components/openlayers/OpenLayers'
 		},
 		shim: {
 			openlayers: {

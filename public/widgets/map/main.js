@@ -7,13 +7,12 @@ define({
 	},
 	render: function() {
 		var OpenLayers = this.sandbox.OpenLayers;
-		console.log(OpenLayers.Map);
-		//this.$el.html('<h1>Hello New Aura</h1>');
 		var map = new OpenLayers.Map("map");
-		console.log(map);
 		map.addLayer(this.getLayer());
-		console.log(map);
 		map.addControl(new OpenLayers.Control.LayerSwitcher({}));
+		if(!map.getCenter()){
+			map.zoomToMaxExtent();
+		}
 	},
 	getLayer: function() {
 		var OpenLayers = this.sandbox.OpenLayers;
