@@ -18,3 +18,11 @@ a {
 	height: 50px;
 	margin-bottom: 10px;
 }
+
+#zoomctrl {
+	width: 200px;
+}
+
+.zoomLevelLabel {
+	margin-right: 30px;
+}

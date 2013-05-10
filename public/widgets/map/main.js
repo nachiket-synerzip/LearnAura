@@ -16,6 +16,10 @@ define({
 	render: function() {
 		var OpenLayers = this.sandbox.OpenLayers;
 		this.map = new OpenLayers.Map("map");
+		this.map.events.register('zoomend', this, function() {
+			console.log("zoom end");
+			this.sandbox.emit("map.zoomchange", this.map.getZoom());
+		});
 		this.map.addLayer(this.getLayer());
 		//this.map.addControl(new OpenLayers.Control.LayerSwitcher({}));
 		if(!this.map.getCenter()){
