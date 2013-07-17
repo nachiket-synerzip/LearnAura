@@ -1,3 +1,4 @@
 node_modules
 .project
-public/components
+public/bower_components
+.idea

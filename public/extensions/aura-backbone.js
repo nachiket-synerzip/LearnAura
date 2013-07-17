@@ -5,8 +5,8 @@ define(function() {
     return {
       require: {
         paths: { 
-          backbone: 'components/backbone/backbone',
-          underscore: 'components/underscore/underscore' 
+          backbone: 'bower_components/backbone/backbone',
+          underscore: 'bower_components/underscore/underscore'
         },
         shim: {
           backbone: { exports: 'Backbone', deps: ['underscore', 'jquery'] }
@@ -16,7 +16,7 @@ define(function() {
         Backbone = require('backbone');
         app.core.mvc    = Backbone;
         app.sandbox.mvc = Backbone;
-        app.core.registerWidgetType('Backbone', Backbone.View.prototype);
+        app.components.addType('Backbone', Backbone.View.prototype);
       }
     }
   }
