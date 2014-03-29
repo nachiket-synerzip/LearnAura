@@ -98,7 +98,7 @@ define({
   display:function(event){
     var f = event.feature;
     var $el = $("#output");
-    $el.html("unclustered " + f.geometry);
+    $el.text("Cluster Details===>" +  "X-cordinate:  "+ f.geometry.x+ "  Y-cordinate:  "+ f.geometry.y);
   },
   zoomIn: function() {
     //zoomIn
