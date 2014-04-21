@@ -76,7 +76,8 @@ define({
     );
     map.addControl(select);
     select.activate();
-    clusters.events.on({"featureselected": this.display});
+    clusters.events.on({"featureselected": this.displayPopUp});
+    clusters.events.on({"featureunselected": this.removePopUp});
     map.addLayers([this.getLayer(), clusters]);
     map.setCenter(new OpenLayers.LonLat(0, 0), 2);
 
@@ -95,10 +96,30 @@ define({
       }
     )
   },
+
   display:function(event){
     var f = event.feature;
     var $el = $("#output");
     $el.text("Cluster Details===>" +  "X-cordinate:  "+ f.geometry.x+ "  Y-cordinate:  "+ f.geometry.y);
+  },
+  displayPopUp:function(event){
+    var feature = event.feature;
+    var popup = new OpenLayers.Popup.FramedCloud("popup",
+      OpenLayers.LonLat.fromString(feature.geometry.toShortString()),
+      null,
+        "<div>You have hovered over : " + feature.id+"</div>" +
+        "<div>similarly all the details can be shown on the map</div>",
+      null,
+      false
+    );
+    feature.popup = popup;
+    map.addPopup(popup);
+  },
+  removePopUp:function(event){
+    var feature = event.feature;
+    map.removePopup(feature.popup);
+    feature.popup.destroy();
+    feature.popup = null;
   },
   zoomIn: function() {
     //zoomIn
